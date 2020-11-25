@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import { Grid } from '@material-ui/core';
 import './App.css';
+import Banner from './components/Banner';
+import Header from './components/Header';
+import ToDoForm from './components/ToDoForm';
+import ToDoList from './components/ToDoList';
+import ToDoContextProvider from './context/ToDoContext';
+
+
+
 
 function App() {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <ToDoContextProvider>
+    <Grid container direction = "column">
+      <Grid item>
+          <Header /> 
+      </Grid>
+      <Grid item container>
+        <Grid sm={2} xs={false}/>
+          <Grid item sm={8} xs={12}>
+            <Banner />
+            <ToDoForm />
+            <ToDoList />
+          </Grid>
+        <Grid sm={2} xs={false}/>
+      </Grid>
+    </Grid>
+   </ToDoContextProvider>
+      
+  
   );
 }
 
