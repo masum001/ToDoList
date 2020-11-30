@@ -12,7 +12,7 @@ const ToDoForm = () => {
     const handleSubmit = (e) =>{
         e.preventDefault();
        dispatch({ type: "ADD_TODO", todo: todo})
-       console.log(todo)
+       setTodo(" ")
     }
     return (
         <form>
