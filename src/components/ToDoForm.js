@@ -15,7 +15,7 @@ const ToDoForm = () => {
        setTodo(" ")
     }
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <Grid container direction="row">
             <Grid item container>
                 <Grid sm={10} xs={4}>
